@@ -12,7 +12,7 @@ const Input = styled.input`
   top: -9999px;
 
   &:checked + span {
-    background-color: #309;
+    background-color: ${(props) => props.onColor || "#309"};
 
     &:before {
       left: 27px;
@@ -26,7 +26,7 @@ const Span = styled.span`
   width: 52px;
   height: 27px;
   border-radius: 100px;
-  background-color: #dcdcdc;
+  background-color: ${(props) => props.offColor || "#dcdcdc"};
   position: relative;
   transition: backgroud-color 0.2s;
   &:before {
@@ -38,16 +38,27 @@ const Span = styled.span`
     height: 20px;
     border-radius: 45px;
     transition: 0.2s;
-    background: #fff;
+    background: ${(props) => props.circleColor || "#fff"};
     box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
   }
 `;
 
-const Toggle = ({ onChange }) => {
+const Toggle = ({
+  onChange,
+  onColor,
+  offColor,
+  circleColor,
+  disabled = false,
+}) => {
   return (
     <InputWrapper>
-      <Input type="checkbox" onChange={onChange} />
-      <Span />
+      <Input
+        type="checkbox"
+        onChange={onChange}
+        onColor={onColor}
+        disabled={disabled}
+      />
+      <Span offColor={offColor} circleColor={circleColor} />
     </InputWrapper>
   );
 };

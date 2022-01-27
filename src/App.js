@@ -1,10 +1,11 @@
 import "./App.css";
 
+import { Tab, Tabs } from "./component/Tab";
+
 import AutoComplete from "./component/AutoComplete";
 import ClickToEdit from "./component/ClickToEdit";
 import Modal from "./component/Modal";
 import React from "react";
-import Tab from "./component/Tab";
 import Tag from "./component/Tag";
 import Toggle from "./component/Toggle";
 import styled from "styled-components";
@@ -54,7 +55,11 @@ const App = () => {
       <Container>
         <span className="app-content">Tab</span>
         <ComponentWrapper>
-          <Tab onChange={setTab} />
+          <Tabs>
+            <Tab title="Tab1" onClick={() => setTab("ONE")} />
+            <Tab title="Tab2" onClick={() => setTab("TWO")} />
+            <Tab title="Tab3" onClick={() => setTab("THREE")} />
+          </Tabs>
           <p>Tab menu {tab}</p>
         </ComponentWrapper>
       </Container>

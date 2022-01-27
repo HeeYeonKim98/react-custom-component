@@ -6,7 +6,66 @@
 
 ###
 
-## ✅ View
+## ✅ Component API
+
+> ### Toggle
+
+#### view
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/48751435/151402788-3b44ea37-8717-404d-bf66-2c993f645f60.gif)
+
+#### Usage
+
+```
+import Toggle from "./Toggle";
+
+function App() {
+  return (
+    <Toggle />
+  );
+}
+
+```
+
+#### props
+
+|     Name      | Type | Default |           Description           |
+| :-----------: | :--: | :-----: | :-----------------------------: |
+|  `disabled`   | bool |  false  |                                 |
+|   `onColor`   | str  |  #309   |  Toggle이 활성화되었을 때 색상  |
+|  `offColor`   | str  | #dcdcdc | Toggle이 비활성화되었을 때 색상 |
+| `circleColor` | str  |  #fff   |        Toggle 버튼 색상         |
+
+### <br/>
+
+> ### Tab
+
+#### view
+
+#### Usage
+
+```
+import { Tab, Tabs } from "./Tab";
+
+function App() {
+  return (
+    <Tabs>
+        <Tab />
+        <Tab />
+    </Tabs>
+  );
+}
+
+```
+
+#### props
+
+|       Name        |   Type   | Default |       Description       |
+| :---------------: | :------: | :-----: | :---------------------: |
+|      `title`      |   str    |         |       `tab` 이름        |
+|     `onClick`     | function |         |                         |
+| `backgroundColor` |   str    |         |     Tab의 배경 색상     |
+|   `activeColor`   |   str    |  #309   | Tab이 활성화 될 때 색상 |
 
 ### <br/>
 
