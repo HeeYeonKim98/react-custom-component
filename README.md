@@ -10,7 +10,7 @@
 
 > ### Toggle
 
-#### view
+#### View
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/48751435/151402788-3b44ea37-8717-404d-bf66-2c993f645f60.gif)
 
@@ -27,7 +27,7 @@ function App() {
 
 ```
 
-#### props
+#### Props
 
 |     Name      | Type | Default |           Description           |
 | :-----------: | :--: | :-----: | :-----------------------------: |
@@ -40,7 +40,9 @@ function App() {
 
 > ### Tab
 
-#### view
+#### View
+
+![tab](https://user-images.githubusercontent.com/48751435/151435244-541ae959-1820-4a6b-b2a3-ffd004a15eaf.gif)
 
 #### Usage
 
@@ -58,7 +60,7 @@ function App() {
 
 ```
 
-#### props
+#### Props
 
 |       Name        |   Type   | Default |       Description       |
 | :---------------: | :------: | :-----: | :---------------------: |
