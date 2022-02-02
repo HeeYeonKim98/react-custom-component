@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonWrapper = styled.div`
+const UlWrapper = styled.ul`
   position: relative;
-  text-align: center;
   display: inline-block;
+  background-color: #dcdcdc;
+  font-weight: bold;
+  list-style: none;
 `;
 
-const Button = styled.button`
-  border: 0;
+const List = styled.li`
   width: 230px;
   height: 50px;
   cursor: pointer;
-  background: ${(props) => props.backgroundColor};
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  background: ${(props) => props.backgroundColor || "#dcdcdc"};
   float: left;
   &:focus {
     background: ${(props) => props.activeColor || "#309"};
@@ -22,22 +27,22 @@ const Button = styled.button`
 
 export const Tabs = ({ children }) => {
   return (
-    <ButtonWrapper>
+    <UlWrapper>
       {React.Children.map(children, (child, index) => {
         return React.cloneElement(child);
       })}
-    </ButtonWrapper>
+    </UlWrapper>
   );
 };
 
 export const Tab = ({ title, onClick, backgroundColor, activeColor }) => {
   return (
-    <Button
+    <List
       onClick={onClick}
       activeColor={activeColor}
       backgroundColor={backgroundColor}
     >
       {title}
-    </Button>
+    </List>
   );
 };

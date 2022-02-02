@@ -38,6 +38,34 @@ function App() {
 
 ### <br/>
 
+> ### Modal
+
+#### View
+
+#### Usage
+
+```
+import Modal from "./Modal";
+
+function App() {
+  return (
+    <Modal />
+  );
+}
+
+```
+
+#### Props
+
+|       Name        |   Type   | Default |       Description       |
+| :---------------: | :------: | :-----: | :---------------------: |
+|      `title`      |   str    |         |       `tab` 이름        |
+|     `onClick`     | function |         |                         |
+|   `titleColor`    |   str    |  #309   | Tab이 활성화 될 때 색상 |
+| `backgroundColor` |   str    |         |     Tab의 배경 색상     |
+
+### <br/>
+
 > ### Tab
 
 #### View
