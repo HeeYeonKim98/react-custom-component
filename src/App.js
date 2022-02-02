@@ -77,7 +77,7 @@ const App = () => {
         <Container>
           <span className="app-content">Tag</span>
           <ComponentWrapper>
-            <Tag />
+            <Tag tags={["CodeStates", "Kim"]} />
           </ComponentWrapper>
         </Container>
 

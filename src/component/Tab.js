@@ -10,7 +10,7 @@ const UlWrapper = styled.ul`
 `;
 
 const List = styled.li`
-  width: 230px;
+  width: 220px;
   height: 50px;
   cursor: pointer;
   display: flex;
@@ -19,6 +19,8 @@ const List = styled.li`
   align-items: center;
   background: ${(props) => props.backgroundColor || "#dcdcdc"};
   float: left;
+  padding: 0 10px;
+  &:active,
   &:focus {
     background: ${(props) => props.activeColor || "#309"};
     color: white;
