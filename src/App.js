@@ -35,6 +35,9 @@ const ComponentWrapper = styled.div`
 const App = () => {
   const [toggle, setToggle] = useToggle(false);
   const [tab, , setTab] = useInput("ONE");
+  const [data, onChangeData] = useInput({ name: "", age: "" });
+  const [editName, , seteditName] = useInput("");
+  const [editAge, , seteditAge] = useInput("");
 
   return (
     <>
@@ -93,9 +96,27 @@ const App = () => {
         <Container>
           <span className="app-content">ClickToEdit</span>
           <ComponentWrapper>
-            <ClickToEdit id="name" label="이름" />
-            <ClickToEdit id="age" label="나이" />
-            <p>이름 김코딩 나이 20</p>
+            <ClickToEdit
+              label="이름"
+              type="text"
+              name="name"
+              placeholder={data.name}
+              value={data.name}
+              onChange={onChangeData}
+              onBlur={() => seteditName(data.name)}
+            />
+            <ClickToEdit
+              label="나이"
+              type="text"
+              name="age"
+              placeholder={data.age}
+              value={data.age}
+              onChange={onChangeData}
+              onBlur={() => seteditAge(data.age)}
+            />
+            <div>
+              이름 {editName} 나이 {editAge}
+            </div>
           </ComponentWrapper>
         </Container>
       </Div>

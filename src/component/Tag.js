@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-
+import React from "react";
 import styled from "styled-components";
+import useInput from "../hooks/useInput";
 
 const Div = styled.div`
   display: flex;
@@ -61,7 +61,7 @@ const List = styled.li`
 `;
 
 const Tag = ({ tags }) => {
-  const [tag, setTag] = useState(tags);
+  const [tag, , setTag] = useInput(tags);
 
   const removeTags = (indexToRemove) => {
     setTag([...tag.filter((_, index) => index !== indexToRemove)]);
