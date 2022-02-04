@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from "react";
 import styled from "styled-components";
-import useInput from "../hooks/useInput";
 import useToggle from "../hooks/useToggle";
 
 const LabelWrapper = styled.div`
@@ -45,13 +44,9 @@ const ClickToEdit = ({
     <LabelWrapper>
       <Label htmlFor={id}>{label}</Label>
       {isEditing ? (
-        <div
-          onBlur={() => {
-            setEditing(false);
-          }}
-          onBlur={onBlur}
-        >
+        <div onBlur={() => setEditing(false)}>
           <Input
+            onBlur={onBlur}
             type={type}
             id={id}
             onChange={onChange}
