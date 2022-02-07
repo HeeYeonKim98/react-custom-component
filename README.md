@@ -1,18 +1,31 @@
 # 원티드 프리온보딩 코스
 
-작성 중 입니다.
+###
+
+## 🐯 What is it?
+
+`front-end`에서 자주 사용하는 컴포넌트 중 다음의 6가지 항목들을 구현한 `custom component`입니다.
+
+- Toggle
+- Modal
+- Tab
+- Tag
+- AutoComplete
+- ClickToEdit
+
+[👉🏻 프리온보딩 프론트엔드 코스 지원 바로가기](https://www.wanted.co.kr/wd/95459)
 
 ### <br/>
 
 ###
 
-## ✅ Component API
+## 🐯 Component API
 
-> ### Toggle
+> ## Toggle
 
 #### View
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/48751435/151402788-3b44ea37-8717-404d-bf66-2c993f645f60.gif)
+![toggle_view](https://user-images.githubusercontent.com/48751435/152809631-3d148c6a-c2a7-4fba-be6d-5d341d861f5f.gif)
 
 #### Usage
 
@@ -21,26 +34,26 @@ import Toggle from "./Toggle";
 
 function App() {
   return (
-    <Toggle />
+    <Toggle circleColor="pink"/>
   );
 }
-
 ```
 
 #### Props
 
-|     Name      | Type | Default |           Description           |
-| :-----------: | :--: | :-----: | :-----------------------------: |
-|  `disabled`   | bool |  false  |                                 |
-|   `onColor`   | str  |  #309   |  Toggle이 활성화되었을 때 색상  |
-|  `offColor`   | str  | #dcdcdc | Toggle이 비활성화되었을 때 색상 |
-| `circleColor` | str  |  #fff   |        Toggle 버튼 색상         |
+|     Name      |      Type       | Default |                Description                |
+| :-----------: | :-------------: | :-----: | :---------------------------------------: |
+|  `onChange`   | function(value) |         | 옵션 또는 입력 값의 변경이 필요할 때 호출 |
+|  `disabled`   |      bool       |  false  |             `Toggle` 비활성화             |
+| `circleColor` |       str       |  #fff   |            `Toggle` 버튼 색상             |
 
 ### <br/>
 
 > ### Modal
 
 #### View
+
+![modal_view](https://user-images.githubusercontent.com/48751435/152809716-11efffbf-6a1f-449a-a45a-994efc784711.gif)
 
 #### Usage
 
@@ -106,9 +119,9 @@ function App() {
 ```
 ├── src/
 │   ├── components/                   -
-│   └── hooks/                        -
+│   └── hooks/                        - custom hook(toggle
 │
-├── App.js                            -
+├── App.js                            - 6가지 컴포넌트들을 렌더링
 ├── index.js                          - entry point
 ├── README.md                         - 리드미(배포링크, 프리뷰, 코드컨벤션)
 └── package.json                      - 사용 package 목록

@@ -1,65 +1,61 @@
 import styled from "styled-components";
 
-const InputWrapper = styled.label`
+const ToggleWrapper = styled.label`
   position: relative;
   text-align: center;
   display: inline-block;
-`;
 
-const Input = styled.input`
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
+  // toggle background
+  > input {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
 
-  &:checked + span {
-    background-color: ${(props) => props.onColor || "#309"};
+    &:checked + span {
+      background-position: left;
+      background: linear-gradient(to right, #309 50%, #dcdcdc 50%) left;
+      transition: 0.8s;
+      background-size: 200%;
+
+      &:before {
+        left: 30px;
+      }
+    }
+  }
+
+  // toggle circle
+  > span {
+    display: flex;
+    cursor: pointer;
+    width: 55px;
+    height: 29px;
+    border-radius: 100px;
+    position: relative;
+    background-position: right;
+    background: linear-gradient(to left, #dcdcdc 50%, #309 50%) right;
+    background-size: 200%;
+    transition: 0.8s;
 
     &:before {
-      left: 27px;
+      content: "";
+      position: absolute;
+      top: 4.5px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 45px;
+      transition: 0.6s;
+      background: ${(props) => props.circleColor || "#fff"};
     }
   }
 `;
 
-const Span = styled.span`
-  display: flex;
-  cursor: pointer;
-  width: 52px;
-  height: 27px;
-  border-radius: 100px;
-  background-color: ${(props) => props.offColor || "#dcdcdc"};
-  position: relative;
-  transition: backgroud-color 0.2s;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    left: 6px;
-    width: 20px;
-    height: 20px;
-    border-radius: 45px;
-    transition: 0.2s;
-    background: ${(props) => props.circleColor || "#fff"};
-    box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
-  }
-`;
-
-const Toggle = ({
-  onChange,
-  onColor,
-  offColor,
-  circleColor,
-  disabled = false,
-}) => {
+const Toggle = ({ onChange, circleColor, disabled = false }) => {
   return (
-    <InputWrapper>
-      <Input
-        type="checkbox"
-        onChange={onChange}
-        onColor={onColor}
-        disabled={disabled}
-      />
-      <Span offColor={offColor} circleColor={circleColor} />
-    </InputWrapper>
+    <ToggleWrapper>
+      <input type="checkbox" onChange={onChange} disabled={disabled} />
+      <span circleColor={circleColor} />
+    </ToggleWrapper>
   );
 };
 
