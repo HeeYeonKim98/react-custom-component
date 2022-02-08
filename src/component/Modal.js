@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import useToggle from "../hooks/useToggle";
 
+// modal button
 const ModalButton = styled.button`
   border-radius: 30px;
   width: 120px;
@@ -10,6 +11,7 @@ const ModalButton = styled.button`
   border: 0;
 `;
 
+// modal 활성화 창 : background
 const Background = styled.div`
   background: rgba(0, 0, 0, 0.55);
   position: fixed;
@@ -25,6 +27,7 @@ const Background = styled.div`
   z-index: 1000;
 `;
 
+// modal 활성화 창 : card
 const ModalContainer = styled.div`
   background: white;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
@@ -33,6 +36,7 @@ const ModalContainer = styled.div`
   height: 10%;
 `;
 
+// modal 활성화 창 : card 속 contents(text, x버튼)
 const ModalContent = styled.div`
   p {
     color: #309;
@@ -70,7 +74,7 @@ const Modal = ({ title, children, textColor, backgroundColor }) => {
           <ModalContainer>
             <ModalContent>
               <button onClick={onClickCloseButton}>X</button>
-              {children}
+              <p>{children}</p>
             </ModalContent>
           </ModalContainer>
         </Background>

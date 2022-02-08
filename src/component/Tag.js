@@ -2,17 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import useInput from "../hooks/useInput";
 
-const Div = styled.div`
+// 태그 컨테이너
+const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   border: 1px solid rgb(214, 216, 218);
   border-radius: 6px;
+
   &:focus-within {
-    border: 1px solid #309;
+    border: 1.5px solid ${(props) => props.borderColor || "#309"};
+  }
+
+  // 태그 작성 input
+  > input {
+    border: none;
+    font-size: 14px;
+    margin-left: 8px;
+    &:focus {
+      outline: transparent;
+    }
   }
 `;
 
+// 태그 리스트
 const Ul = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -20,16 +33,7 @@ const Ul = styled.ul`
   margin: 8px 0 0 0;
 `;
 
-const Input = styled.input`
-  flex: 1;
-  border: none;
-  font-size: 14px;
-  margin-left: 8px;
-  &:focus {
-    outline: transparent;
-  }
-`;
-
+// 태그 모양
 const List = styled.li`
   height: 32px;
   display: flex;
@@ -41,10 +45,14 @@ const List = styled.li`
   list-style: none;
   border-radius: 6px;
   margin: 0 0 8px 8px;
-  background: #309;
+  background: ${(props) => props.backgroundColor || "#309"};
+
+  // 태그 이름
   .tag-title {
     margin-top: 3px;
   }
+
+  // 태그 삭제 버튼
   .tag-close-icon {
     display: block;
     width: 16px;
@@ -60,13 +68,15 @@ const List = styled.li`
   }
 `;
 
-const Tag = ({ tags }) => {
+const Tag = ({ tags, backgroundColor, borderColor }) => {
   const [tag, , setTag] = useInput(tags);
 
+  // 태그 삭제 함수
   const removeTags = (indexToRemove) => {
     setTag([...tag.filter((_, index) => index !== indexToRemove)]);
   };
 
+  // 태그 추가 함수
   const addTags = (event) => {
     if (event.target.value !== "") {
       setTag([...tag, event.target.value]);
@@ -75,10 +85,14 @@ const Tag = ({ tags }) => {
   };
 
   return (
-    <Div>
+    <TagContainer>
       <Ul>
         {tag.map((value, index) => (
-          <List key={index}>
+          <List
+            key={index}
+            backgroundColor={backgroundColor}
+            borderColor={borderColor}
+          >
             <span className="tag-title">{value}</span>
             <span className="tag-close-icon" onClick={() => removeTags(index)}>
               x
@@ -86,12 +100,13 @@ const Tag = ({ tags }) => {
           </List>
         ))}
       </Ul>
-      <Input
+
+      <input
         type="text"
         onKeyUp={(event) => (event.key === "Enter" ? addTags(event) : null)}
         placeholder="Press enter to add tags"
       />
-    </Div>
+    </TagContainer>
   );
 };
 export default Tag;

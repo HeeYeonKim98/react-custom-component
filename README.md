@@ -1,9 +1,5 @@
 # 원티드 프리온보딩 코스
 
-###
-
-## 🐯 What is it?
-
 `front-end`에서 자주 사용하는 컴포넌트 중 다음의 6가지 항목들을 구현한 `custom component`입니다.
 
 - Toggle
@@ -14,6 +10,26 @@
 - ClickToEdit
 
 [👉🏻 프리온보딩 프론트엔드 코스 지원 바로가기](https://www.wanted.co.kr/wd/95459)
+
+### <br/>
+
+###
+
+## 🐯 Q&A
+
+#### Q) 구현한 방법과 이유
+
+A) css는 styled-components를 사용하였습니다.
+
+### <br/>
+
+#### Q) 구현하면서 어려웠던 점과 해결 방법
+
+A)
+
+#### Q) 자세한 실행 방법
+
+A) 6가지 컴포넌트의 자세한 pre-view와 Usage는 Component API를 봐주세요.
 
 ### <br/>
 
@@ -30,7 +46,7 @@
 #### Usage
 
 ```
-import Toggle from "./Toggle";
+import Toggle from "./component/Toggle";
 
 function App() {
   return (
@@ -43,13 +59,13 @@ function App() {
 
 |     Name      |      Type       | Default |                Description                |
 | :-----------: | :-------------: | :-----: | :---------------------------------------: |
-|  `onChange`   | function(value) |         | 옵션 또는 입력 값의 변경이 필요할 때 호출 |
+|  `onChange`   | function(value) |    -    | 옵션 또는 입력 값의 변경이 필요할 때 호출 |
 |  `disabled`   |      bool       |  false  |             `Toggle` 비활성화             |
 | `circleColor` |       str       |  #fff   |            `Toggle` 버튼 색상             |
 
 ### <br/>
 
-> ### Modal
+> ## Modal
 
 #### View
 
@@ -58,28 +74,28 @@ function App() {
 #### Usage
 
 ```
-import Modal from "./Modal";
+import Modal from "./component/Modal";
 
 function App() {
   return (
-    <Modal />
+    <Modal title="Open Modal!">
+      <p>안녕하세요:)</p>
+    </Modal>
   );
 }
-
 ```
 
 #### Props
 
-|       Name        |   Type   | Default |       Description       |
-| :---------------: | :------: | :-----: | :---------------------: |
-|      `title`      |   str    |         |       `tab` 이름        |
-|     `onClick`     | function |         |                         |
-|   `titleColor`    |   str    |  #309   | Tab이 활성화 될 때 색상 |
-| `backgroundColor` |   str    |         |     Tab의 배경 색상     |
+|       Name        | Type | Default |    Description    |
+| :---------------: | :--: | :-----: | :---------------: |
+|      `title`      | str  |    -    |   `Modal` 제목    |
+|    `textColor`    | str  |  #fff   | `Modal` 제목 색상 |
+| `backgroundColor` | str  |  #309   | `Modal` 배경 색상 |
 
 ### <br/>
 
-> ### Tab
+> ## Tab
 
 #### View
 
@@ -92,10 +108,7 @@ import { Tab, Tabs } from "./Tab";
 
 function App() {
   return (
-    <Tabs>
-        <Tab />
-        <Tab />
-    </Tabs>
+
   );
 }
 
@@ -105,7 +118,7 @@ function App() {
 
 |       Name        |   Type   | Default |       Description       |
 | :---------------: | :------: | :-----: | :---------------------: |
-|      `title`      |   str    |         |       `tab` 이름        |
+|      `title`      |   str    |         |       `Tab` 이름        |
 |     `onClick`     | function |         |                         |
 | `backgroundColor` |   str    |         |     Tab의 배경 색상     |
 |   `activeColor`   |   str    |  #309   | Tab이 활성화 될 때 색상 |
@@ -114,14 +127,113 @@ function App() {
 
 ###
 
-## ✅ Directory
+> ## Tag
+
+#### View
+
+![tag_view](https://user-images.githubusercontent.com/48751435/152916849-613a15da-f819-4a3d-9cc5-34e84b0fffea.gif)
+
+#### Usage
+
+```
+import Tag from "./component/Tag";
+
+function App() {
+  return (
+    <Tag tags={["CodeStates", "Kim"]} />
+  );
+}
+
+```
+
+#### Props
+
+|       Name        | Type | Default |     Description     |
+| :---------------: | :--: | :-----: | :-----------------: |
+|      `tags`       | list |    -    |     `Tag` 목록      |
+| `backgroundColor` | str  |  #309   |   `Tag` 배경 색상   |
+|   `borderColor`   | str  |  #309   | `Tag` 컨테이너 색상 |
+
+### <br/>
+
+###
+
+> ## AutoComplete
+
+#### View
+
+![autocomplete_view](https://user-images.githubusercontent.com/48751435/152916912-1da05e78-a0df-46e3-a10d-d39d20d26e01.gif)
+
+#### Usage
+
+```
+import AutoComplete from "./component/AutoComplete";
+
+function App() {
+  return (
+    <AutoComplete data={["apple", "banana"]} />
+  );
+}
+
+```
+
+#### Props
+
+|  Name  | Type | Default |     Description     |
+| :----: | :--: | :-----: | :-----------------: |
+| `data` | list |    -    | `AutoComplete` 목록 |
+
+### <br/>
+
+###
+
+> ## ClickToEdit
+
+#### View
+
+![clicktoedit_view](https://user-images.githubusercontent.com/48751435/152916906-ea1b9e21-e534-4550-b3b5-cc69e7c75c57.gif)
+
+#### Usage
+
+```
+import ClickToEdit from "./component/ClickToEdit";
+
+function App() {
+  return (
+    <ClickToEdit
+        label="이름"
+        type="text"
+        name="name"
+    />
+  );
+}
+
+```
+
+#### Props
+
+|     Name      |      Type       | Default |                Description                |
+| :-----------: | :-------------: | :-----: | :---------------------------------------: |
+|    `label`    |       str       |    -    |            edit input의 label             |
+|    `type`     |       str       |    -    |             input의 type 속성             |
+|  `onChange`   | function(value) |    -    | 옵션 또는 입력 값의 변경이 필요할 때 호출 |
+|    `value`    |      value      |    -    |            edit input의 value             |
+|    `name`     |       str       |    -    |             edit input의 name             |
+| `placeholder` |      value      |    -    |         편집된 input에 있는 text          |
+|   `onBlur`    |    function     |    -    |     focus가 해제될 때 발생하는 이벤트     |
+
+### <br/>
+
+###
+
+## 🐯 Directory
 
 ```
 ├── src/
-│   ├── components/                   -
-│   └── hooks/                        - custom hook(toggle
+│   ├── components/                   - 6가지 컴포넌트 파일
+│   └── hooks/                        - custom hook(toggle, input)
 │
-├── App.js                            - 6가지 컴포넌트들을 렌더링
+├── App.js                            - 6가지 컴포넌트 렌더링
 ├── index.js                          - entry point
 ├── README.md                         - 리드미(배포링크, 프리뷰, 코드컨벤션)
 └── package.json                      - 사용 package 목록

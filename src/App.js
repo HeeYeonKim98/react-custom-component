@@ -57,9 +57,7 @@ const App = () => {
         <Container>
           <span className="app-content">Modal</span>
           <ComponentWrapper>
-            <Modal title="Open Modal">
-              <p>HELLO CODESTATES !</p>
-            </Modal>
+            <Modal title="Open Modal">HELLO CODESTATES !</Modal>
           </ComponentWrapper>
         </Container>
 
@@ -68,9 +66,9 @@ const App = () => {
           <span className="app-content">Tab</span>
           <ComponentWrapper>
             <Tabs>
-              <Tab title="Tab1" onClick={() => setTab("ONE")} />
-              <Tab title="Tab2" onClick={() => setTab("TWO")} />
-              <Tab title="Tab3" onClick={() => setTab("THREE")} />
+              <Tab key="1" title="Tab1" onClick={() => setTab("ONE")} />
+              <Tab key="2" title="Tab2" onClick={() => setTab("TWO")} />
+              <Tab key="3" title="Tab3" onClick={() => setTab("THREE")} />
             </Tabs>
             <p>Tab menu {tab}</p>
           </ComponentWrapper>
@@ -88,7 +86,9 @@ const App = () => {
         <Container>
           <span className="app-content">AutoComplete</span>
           <ComponentWrapper>
-            <AutoComplete />
+            <AutoComplete
+              data={["antique", "refurbished", "rustic", "vintage", "중고A급"]}
+            />
           </ComponentWrapper>
         </Container>
 

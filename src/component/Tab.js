@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useInput from "../hooks/useInput";
 
 const UlWrapper = styled.ul`
   position: relative;
@@ -7,6 +8,20 @@ const UlWrapper = styled.ul`
   background-color: #dcdcdc;
   font-weight: bold;
   list-style: none;
+
+  .submenu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    cursor: pointer;
+  }
+
+  .focused {
+    background-color: blue;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 const List = styled.li`
@@ -20,11 +35,6 @@ const List = styled.li`
   background: ${(props) => props.backgroundColor || "#dcdcdc"};
   float: left;
   padding: 0 10px;
-  &:active,
-  &:focus {
-    background: ${(props) => props.activeColor || "#309"};
-    color: white;
-  }
 `;
 
 export const Tabs = ({ children }) => {
@@ -37,9 +47,12 @@ export const Tabs = ({ children }) => {
   );
 };
 
-export const Tab = ({ title, onClick, backgroundColor, activeColor }) => {
+export const Tab = ({ key, title, onClick, backgroundColor, activeColor }) => {
+  const [state, , setState] = useInput(0);
+
   return (
     <List
+      className={`${state === key ? "submenu focused" : "submenu"}`}
       onClick={onClick}
       activeColor={activeColor}
       backgroundColor={backgroundColor}
