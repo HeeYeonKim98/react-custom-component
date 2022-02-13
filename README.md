@@ -101,8 +101,6 @@ function App() {
 
 #### View
 
-![tab](https://user-images.githubusercontent.com/48751435/151435244-541ae959-1820-4a6b-b2a3-ffd004a15eaf.gif)
-
 #### Usage
 
 ```
@@ -110,7 +108,7 @@ import { Tab, Tabs } from "./Tab";
 
 function App() {
   return (
-
+    <Tab tabs=[]/>
   );
 }
 
