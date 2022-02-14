@@ -54,7 +54,7 @@ const Toggle = ({ onChange, circleColor, disabled = false }) => {
   return (
     <ToggleWrapper>
       <input type="checkbox" onChange={onChange} disabled={disabled} />
-      <span circleColor={circleColor} />
+      <span circlecolor={circleColor} />
     </ToggleWrapper>
   );
 };

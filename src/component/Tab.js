@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import useInput from "../hooks/useInput";
 
-const UlWrapper = styled.ul`
-  position: relative;
-  display: inline-block;
-  background-color: #dcdcdc;
+const Ul = styled.ul`
+  height: 50px;
+  background-color: ${(props) => props.backgroundcolor || "#dcdcdc"};
+  color: rgba(73, 73, 73, 0.5);
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
   list-style: none;
 
   .submenu {
@@ -17,47 +19,41 @@ const UlWrapper = styled.ul`
   }
 
   .focused {
-    background-color: blue;
+    background: ${(props) => props.activecolor || "#309"};
     color: white;
+    height: 100%;
     display: flex;
     align-items: center;
+    transition: 0.7s;
   }
 `;
 
 const List = styled.li`
-  width: 220px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
+  width: 240px;
   align-items: center;
-  background: ${(props) => props.backgroundColor || "#dcdcdc"};
-  float: left;
-  padding: 0 10px;
 `;
 
-export const Tabs = ({ children }) => {
-  return (
-    <UlWrapper>
-      {React.Children.map(children, (child, index) => {
-        return React.cloneElement(child);
-      })}
-    </UlWrapper>
-  );
-};
-
-export const Tab = ({ key, title, onClick, backgroundColor, activeColor }) => {
+const Tab = ({ tabs, backgroundcolor, activecolor }) => {
   const [state, , setState] = useInput(0);
 
   return (
-    <List
-      className={`${state === key ? "submenu focused" : "submenu"}`}
-      onClick={onClick}
-      activeColor={activeColor}
-      backgroundColor={backgroundColor}
-    >
-      {title}
-    </List>
+    <>
+      <Ul>
+        {tabs.map((value, index) => (
+          <List
+            key={index}
+            className={`${index === state ? "submenu focused" : "submenu"}`}
+            onClick={() => setState(index)}
+            activecolor={activecolor}
+            backgroundcolor={backgroundcolor}
+          >
+            {value.name}
+          </List>
+        ))}
+      </Ul>
+      <p>Tab menu {tabs[state].content}</p>
+    </>
   );
 };
+
+export default Tab;

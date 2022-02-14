@@ -1,11 +1,10 @@
 import "./App.css";
 
-import { Tab, Tabs } from "./component/Tab";
-
 import AutoComplete from "./component/AutoComplete";
 import ClickToEdit from "./component/ClickToEdit";
 import Modal from "./component/Modal";
 import React from "react";
+import Tab from "./component/Tab";
 import Tag from "./component/Tag";
 import Toggle from "./component/Toggle";
 import styled from "styled-components";
@@ -34,7 +33,6 @@ const ComponentWrapper = styled.div`
 
 const App = () => {
   const [toggle, setToggle] = useToggle(false);
-  const [tab, , setTab] = useInput("ONE");
   const [data, onChangeData] = useInput({ name: "", age: "" });
   const [editName, , seteditName] = useInput("");
   const [editAge, , seteditAge] = useInput("");
@@ -65,12 +63,13 @@ const App = () => {
         <Container>
           <span className="app-content">Tab</span>
           <ComponentWrapper>
-            <Tabs>
-              <Tab key="1" title="Tab1" onClick={() => setTab("ONE")} />
-              <Tab key="2" title="Tab2" onClick={() => setTab("TWO")} />
-              <Tab key="3" title="Tab3" onClick={() => setTab("THREE")} />
-            </Tabs>
-            <p>Tab menu {tab}</p>
+            <Tab
+              tabs={[
+                { name: "Tab1", content: "ONE" },
+                { name: "Tab2", content: "TWO" },
+                { name: "Tab3", content: "THREE" },
+              ]}
+            />
           </ComponentWrapper>
         </Container>
 

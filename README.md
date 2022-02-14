@@ -19,7 +19,7 @@
 
 #### Q) 구현한 방법과 이유
 
-A) antd, material ui 등과 같은 오픈 소스 UI처럼 다른 사용자가 쉽게 커스텀하여 사용할 수 있게 6개의 컴포넌트를 필요한 props들을 설정해 모듈화하여 app.js에 필요한 props를 작성하여 렌더링하였습니다. CSS는 제가 능숙하게 사용할 수 있는 styled-components를 사용하였습니다.
+A) antd, material ui 등과 같은 오픈 소스 UI처럼 다른 사용자가 쉽게 커스텀하여 사용할 수 있도록 구현하고 싶었습니다. 이 목적에 맞게 각각의 컴포넌트들이 필요한 props들을 설정하여 컴포넌트화를 진행하였고, 최종적으로 app.js에 필요한 props를 작성하여 렌더링하였습니다.
 
 ### <br/>
 
@@ -31,7 +31,7 @@ A) 주어진 컴포넌트 예시에 맞게 CSS를 적용하는 과정에서 어�
 
 #### Q) 자세한 실행 방법
 
-A) 6가지 컴포넌트의 자세한 pre-view와 Usage는 Component API를 봐주세요.
+A) 6가지 컴포넌트의 자세한 pre-view와 Usage는 Component API를 꼭 봐주세요! 감사합니다 :)
 
 ### <br/>
 
@@ -52,7 +52,7 @@ import Toggle from "./component/Toggle";
 
 function App() {
   return (
-    <Toggle circleColor="pink"/>
+    <Toggle circleColor = "pink"/>
   );
 }
 ```
@@ -63,7 +63,7 @@ function App() {
 | :-----------: | :-------------: | :-----: | :---------------------------------------: |
 |  `onChange`   | function(value) |    -    | 옵션 또는 입력 값의 변경이 필요할 때 호출 |
 |  `disabled`   |      bool       |  false  |             `Toggle` 비활성화             |
-| `circleColor` |       str       |  #fff   |            `Toggle` 버튼 색상             |
+| `circleColor` |      color      |  #fff   |            `Toggle` 버튼 색상             |
 
 ### <br/>
 
@@ -80,8 +80,8 @@ import Modal from "./component/Modal";
 
 function App() {
   return (
-    <Modal title="Open Modal!">
-      <p>안녕하세요:)</p>
+    <Modal title = "Open Modal!">
+      안녕하세요:)
     </Modal>
   );
 }
@@ -89,17 +89,19 @@ function App() {
 
 #### Props
 
-|       Name        | Type | Default |    Description    |
-| :---------------: | :--: | :-----: | :---------------: |
-|      `title`      | str  |    -    |   `Modal` 제목    |
-|    `textColor`    | str  |  #fff   | `Modal` 제목 색상 |
-| `backgroundColor` | str  |  #309   | `Modal` 배경 색상 |
+|       Name        | Type  | Default |    Description    |
+| :---------------: | :---: | :-----: | :---------------: |
+|      `title`      |  str  |    -    |   `Modal` 제목    |
+|    `textColor`    | color |  #fff   | `Modal` 제목 색상 |
+| `backgroundColor` | color |  #309   | `Modal` 배경 색상 |
 
 ### <br/>
 
 > ## Tab
 
 #### View
+
+![tab_view](https://user-images.githubusercontent.com/48751435/153879599-e37e7b1f-2955-4b7b-9ddc-fac5ca63164c.gif)
 
 #### Usage
 
@@ -108,7 +110,7 @@ import { Tab, Tabs } from "./Tab";
 
 function App() {
   return (
-    <Tab tabs=[]/>
+    <Tab tabs = {[{name:"home"}, {name:"mypage"}]} />
   );
 }
 
@@ -116,12 +118,11 @@ function App() {
 
 #### Props
 
-|       Name        |   Type   | Default |       Description       |
-| :---------------: | :------: | :-----: | :---------------------: |
-|      `title`      |   str    |         |       `Tab` 이름        |
-|     `onClick`     | function |         |                         |
-| `backgroundColor` |   str    |         |     Tab의 배경 색상     |
-|   `activeColor`   |   str    |  #309   | Tab이 활성화 될 때 색상 |
+|       Name        | Type  | Default |         Description          |
+| :---------------: | :---: | :-----: | :--------------------------: |
+|      `tabs`       |  arr  |    -    | `Tab` 요소들을 반환하는 배열 |
+| `backgroundColor` | color | #dcdcdc |       Tab의 배경 색상        |
+|   `activeColor`   | color |  #309   |   Tab이 활성화 될 때 색상    |
 
 ### <br/>
 
@@ -140,7 +141,7 @@ import Tag from "./component/Tag";
 
 function App() {
   return (
-    <Tag tags={["CodeStates", "Kim"]} />
+    <Tag tags = {["CodeStates", "Kim"]} />
   );
 }
 
@@ -148,11 +149,11 @@ function App() {
 
 #### Props
 
-|       Name        | Type | Default |     Description     |
-| :---------------: | :--: | :-----: | :-----------------: |
-|      `tags`       | list |    -    |     `Tag` 목록      |
-| `backgroundColor` | str  |  #309   |   `Tag` 배경 색상   |
-|   `borderColor`   | str  |  #309   | `Tag` 컨테이너 색상 |
+|       Name        | Type  | Default |     Description     |
+| :---------------: | :---: | :-----: | :-----------------: |
+|      `tags`       | list  |    -    |     `Tag` 목록      |
+| `backgroundColor` | color |  #309   |   `Tag` 배경 색상   |
+|   `borderColor`   | color |  #309   | `Tag` 컨테이너 색상 |
 
 ### <br/>
 
@@ -162,7 +163,7 @@ function App() {
 
 #### View
 
-![autocomplete_view](https://user-images.githubusercontent.com/48751435/152916912-1da05e78-a0df-46e3-a10d-d39d20d26e01.gif)
+![autocomplete_view](https://user-images.githubusercontent.com/48751435/153879755-7c6021c1-9d31-4263-ba55-e5bbd5c16004.gif)
 
 #### Usage
 
@@ -171,7 +172,7 @@ import AutoComplete from "./component/AutoComplete";
 
 function App() {
   return (
-    <AutoComplete data={["apple", "banana"]} />
+    <AutoComplete data = {["apple", "banana"]} />
   );
 }
 
@@ -181,7 +182,7 @@ function App() {
 
 |  Name  | Type | Default |     Description     |
 | :----: | :--: | :-----: | :-----------------: |
-| `data` | list |    -    | `AutoComplete` 목록 |
+| `data` | arr  |    -    | `AutoComplete` 목록 |
 
 ### <br/>
 
@@ -201,9 +202,9 @@ import ClickToEdit from "./component/ClickToEdit";
 function App() {
   return (
     <ClickToEdit
-        label="이름"
-        type="text"
-        name="name"
+        label = "이름"
+        type = "text"
+        name = "name"
     />
   );
 }

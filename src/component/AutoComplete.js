@@ -9,10 +9,10 @@ const InputContainer = styled.div`
   padding: 1rem;
   border: 1px solid #cdcdcd;
   border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
 
   &:focus-within {
     box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
-    border-radius: 1rem 1rem 0 0;
   }
 
   > input {
@@ -97,7 +97,6 @@ const AutoComplete = ({ data }) => {
         <input
           type="text"
           value={text}
-          defaultValue={text}
           onChange={handleInputChange}
           onKeyUp={handleInputChange}
         ></input>
