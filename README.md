@@ -106,7 +106,7 @@ function App() {
 #### Usage
 
 ```
-import { Tab, Tabs } from "./Tab";
+import { Tab, Tabs } from "./component/Tab";
 
 function App() {
   return (
@@ -244,7 +244,7 @@ function App() {
 
 ###
 
-## ✅ Code Convention
+## 🐯 Code Convention
 
 ### Getting Started
 
@@ -260,13 +260,7 @@ $ git clone "https://github.com/HeeYeonKim98/wanted_pre_onboarding.git"
 $ npm install
 ```
 
-3. VScode prettier
-
-```
-$ touch .prettierrc
-```
-
-4. `start` the project,
+3. `start` the project,
 
 ```
 $ npm start
