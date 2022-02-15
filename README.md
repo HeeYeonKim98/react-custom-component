@@ -106,7 +106,7 @@ function App() {
 #### Usage
 
 ```
-import { Tab, Tabs } from "./component/Tab";
+import Tab from "./component/Tab";
 
 function App() {
   return (
