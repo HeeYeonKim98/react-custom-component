@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useInput from "../hooks/useInput";
 
+// tab container style
 const Ul = styled.ul`
   height: 50px;
   background-color: ${(props) => props.backgroundcolor || "#dcdcdc"};
@@ -11,6 +12,7 @@ const Ul = styled.ul`
   flex-direction: row;
   list-style: none;
 
+  // tab not active
   .submenu {
     display: flex;
     justify-content: center;
@@ -18,6 +20,7 @@ const Ul = styled.ul`
     cursor: pointer;
   }
 
+  // tab active
   .focused {
     background: ${(props) => props.activecolor || "#309"};
     color: white;
@@ -28,6 +31,7 @@ const Ul = styled.ul`
   }
 `;
 
+// tab style
 const List = styled.li`
   width: 240px;
   align-items: center;

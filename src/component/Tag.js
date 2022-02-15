@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useInput from "../hooks/useInput";
 
-// 태그 컨테이너
+// tag container
 const TagContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -14,8 +14,8 @@ const TagContainer = styled.div`
     border: 1.5px solid ${(props) => props.borderColor || "#309"};
   }
 
-  // 태그 작성 input
-  > input {
+  // tag input
+  input {
     border: none;
     font-size: 14px;
     margin-left: 8px;
@@ -25,7 +25,7 @@ const TagContainer = styled.div`
   }
 `;
 
-// 태그 리스트
+// tag list
 const Ul = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +33,7 @@ const Ul = styled.ul`
   margin: 8px 0 0 0;
 `;
 
-// 태그 모양
+// tag
 const List = styled.li`
   height: 32px;
   display: flex;
@@ -47,12 +47,12 @@ const List = styled.li`
   margin: 0 0 8px 8px;
   background: ${(props) => props.backgroundColor || "#309"};
 
-  // 태그 이름
+  // tag 이름
   .tag-title {
     margin-top: 3px;
   }
 
-  // 태그 삭제 버튼
+  // tag 삭제 버튼
   .tag-close-icon {
     display: block;
     width: 16px;
@@ -71,12 +71,12 @@ const List = styled.li`
 const Tag = ({ tags, backgroundColor, borderColor }) => {
   const [tag, , setTag] = useInput(tags);
 
-  // 태그 삭제 함수
+  // tag 삭제 함수
   const removeTags = (indexToRemove) => {
     setTag([...tag.filter((_, index) => index !== indexToRemove)]);
   };
 
-  // 태그 추가 함수
+  // tag 추가 함수
   const addTags = (event) => {
     if (event.target.value !== "") {
       setTag([...tag, event.target.value]);

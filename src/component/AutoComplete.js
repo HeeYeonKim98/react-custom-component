@@ -69,8 +69,8 @@ const DropDown = ({ datalist, onClick, selected }) => {
 
 const AutoComplete = ({ data }) => {
   const [autoComplete, setAutoComplete] = useState(false); // drop-down 활성화
-  const [dataList, setDataList] = useState(data); // data 담을 state
-  const [text, setText] = useState(""); // input창 state
+  const [dataList, setDataList] = useState(data);
+  const [text, setText] = useState("");
   const [selected] = useState(-1); // drop-down에서 선택한 state
 
   useEffect(() => {

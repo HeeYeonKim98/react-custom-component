@@ -6,7 +6,7 @@ const ToggleWrapper = styled.label`
   display: inline-block;
 
   // toggle background
-  > input {
+  input {
     position: absolute;
     left: -9999px;
     top: -9999px;
@@ -24,7 +24,7 @@ const ToggleWrapper = styled.label`
   }
 
   // toggle circle
-  > span {
+  span {
     display: flex;
     cursor: pointer;
     width: 55px;

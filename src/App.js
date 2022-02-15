@@ -16,19 +16,24 @@ const Div = styled.div`
   margin-right: auto;
   display: block;
   display: table;
-`;
 
-const Container = styled.div`
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 10%);
-  padding: 14px;
-  margin: 50px 10px;
-`;
+  span {
+    font-weight: 900;
+    font-size: larger;
+  }
 
-const ComponentWrapper = styled.div`
-  text-align: center;
-  padding: 100px 0;
+  .app-container {
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 10%);
+    padding: 14px;
+    margin: 50px 10px;
+  }
+
+  .app-component {
+    text-align: center;
+    padding: 100px 0;
+  }
 `;
 
 const App = () => {
@@ -43,26 +48,26 @@ const App = () => {
 
       <Div>
         {/* Toggle Component */}
-        <Container>
-          <span className="app-content">Toggle</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>Toggle</span>
+          <div className="app-component">
             <Toggle onChange={setToggle} />
             <p>Toggle Switch {toggle ? "ON" : "OFF"}</p>
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
 
         {/* Modal Component */}
-        <Container>
-          <span className="app-content">Modal</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>Modal</span>
+          <div className="app-component">
             <Modal title="Open Modal">HELLO CODESTATES !</Modal>
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
 
         {/* Tab Component */}
-        <Container>
-          <span className="app-content">Tab</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>Tab</span>
+          <div className="app-component">
             <Tab
               tabs={[
                 { name: "Tab1", content: "ONE" },
@@ -70,31 +75,31 @@ const App = () => {
                 { name: "Tab3", content: "THREE" },
               ]}
             />
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
 
         {/* Tag Component */}
-        <Container>
-          <span className="app-content">Tag</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>Tag</span>
+          <div className="app-component">
             <Tag tags={["CodeStates", "Kim"]} />
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
 
         {/* AutoComplete Component */}
-        <Container>
-          <span className="app-content">AutoComplete</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>AutoComplete</span>
+          <div className="app-component">
             <AutoComplete
               data={["antique", "refurbished", "rustic", "vintage", "중고A급"]}
             />
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
 
         {/* ClickToEdit Component */}
-        <Container>
-          <span className="app-content">ClickToEdit</span>
-          <ComponentWrapper>
+        <div className="app-container">
+          <span>ClickToEdit</span>
+          <div className="app-component">
             <ClickToEdit
               label="이름"
               type="text"
@@ -116,8 +121,8 @@ const App = () => {
             <div>
               이름 {editName} 나이 {editAge}
             </div>
-          </ComponentWrapper>
-        </Container>
+          </div>
+        </div>
       </Div>
     </>
   );

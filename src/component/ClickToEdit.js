@@ -1,27 +1,28 @@
-/* eslint-disable no-unused-expressions */
 import React from "react";
 import styled from "styled-components";
 import useToggle from "../hooks/useToggle";
 
-const LabelWrapper = styled.div`
+// 전체 container
+const Container = styled.div`
   text-align: center;
   margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  label {
+    margin-right: 20px;
+  }
+
+  input {
+    width: 150px;
+    height: 25px;
+    text-align: center;
+  }
 `;
 
-const Label = styled.label`
-  margin-right: 20px;
-`;
-
-const Input = styled.input`
-  width: 150px;
-  height: 25px;
-  text-align: center;
-`;
-
+// edited input
 const Div = styled.div`
   border: 1px solid #c0c0c0;
   height: 25px;
@@ -41,11 +42,11 @@ const ClickToEdit = ({
   const [isEditing, setEditing] = useToggle(false);
 
   return (
-    <LabelWrapper>
-      <Label htmlFor={id}>{label}</Label>
+    <Container>
+      <label htmlFor={id}>{label}</label>
       {isEditing ? (
         <div onBlur={() => setEditing(false)}>
-          <Input
+          <input
             onBlur={onBlur}
             type={type}
             id={id}
@@ -59,7 +60,7 @@ const ClickToEdit = ({
           <span>{placeholder}</span>
         </Div>
       )}
-    </LabelWrapper>
+    </Container>
   );
 };
 export default ClickToEdit;
