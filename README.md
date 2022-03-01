@@ -9,7 +9,6 @@
 - AutoComplete
 - ClickToEdit
 
-[👉🏻 프리온보딩 프론트엔드 코스 지원 바로가기](https://www.wanted.co.kr/wd/95459)
 
 ### <br/>
 
