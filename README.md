@@ -227,7 +227,7 @@ function App() {
 1. `clone` the repository,
 
 ```
-$ git clone "https://github.com/HeeYeonKim98/wanted_pre_onboarding.git"
+$ git clone "https://github.com/HeeYeonKim98/react-custom-component.git"
 ```
 
 2. `Install` dependencies,
@@ -244,18 +244,15 @@ $ npm start
 
 ### Commit Emoji
 
-|     emoji      |                   when to use it                   |
-| :------------: | :------------------------------------------------: |
-|     :tada:     |                   프로젝트 시작                    |
-|   :sparkles:   |                  새로운 기능 추가                  |
-|    :wrench:    |             구성 파일 추가 및 업데이트             |
-|     :bug:      |                     버그 수정                      |
-| :construction: |                 작업 진행 중 커밋                  |
-|   :pencil2:    |               간단한 코드/오타 수정                |
-|   :recycle:    |                   코드 리팩터링                    |
-|    :truck:     |               파일 이동 및 이름 변경               |
-|   :package:    |              패키지 추가 및 업데이트               |
-|    :books:     | 문서 추가 및 업데이트 (e.g. README, Code comments) |
+|   emoji    | commit message |       when to use it        |
+| :--------: | :------------: | :-------------------------: |
+|   :tada:   |     Start      |        프로젝트 시작        |
+| :sparkles: |      Feat      |      새로운 기능 추가       |
+|   :bug:    |      Fix       |          버그 수정          |
+| :recycle:  |    Refactor    |        코드 리팩터링        |
+| :lipstick: |     Style      |   스타일 추가 및 업데이트   |
+| :package:  |     Chore      |   패키지 추가 및 업데이트   |
+|  :books:   |      Docs      | 그 외 문서 추가 및 업데이트 |
 
 ### <br/>
 
